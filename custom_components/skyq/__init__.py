@@ -1,12 +1,11 @@
 """Initialise."""
-import asyncio
+
 import json
 import logging
 import os
 
 from homeassistant.const import CONF_HOST, CONF_NAME, Platform
 from homeassistant.exceptions import ConfigEntryNotReady
-
 from pyskyqremote.const import DEVICE_GATEWAYSTB, UNSUPPORTED_DEVICES
 from pyskyqremote.skyq_remote import SkyQRemote
 
@@ -26,9 +25,7 @@ from .const import (
 
 _LOGGER = logging.getLogger(__name__)
 
-ENTITY_SENSOR = "sensor"
-ENTITY_MEDIA_PLAYER = "media_player"
-PLATFORMS = [ENTITY_MEDIA_PLAYER, ENTITY_SENSOR]
+PLATFORMS = [Platform.MEDIA_PLAYER, Platform.SENSOR]
 
 
 async def async_setup(hass, config):  # pylint: disable=unused-argument
@@ -61,7 +58,7 @@ async def async_setup_entry(hass, config_entry):
             name,
         )
 
-    _check_for_storage_contents(hass)
+    await hass.async_add_executor_job(_check_for_storage_contents, hass)
 
     hass.data[DOMAIN][config_entry.entry_id] = {
         SKYQREMOTE: remote,
@@ -69,9 +66,12 @@ async def async_setup_entry(hass, config_entry):
     }
 
     for component in PLATFORMS:
-        if remote.device_type == DEVICE_GATEWAYSTB or component == ENTITY_MEDIA_PLAYER:
-            hass.async_create_task(
-                hass.config_entries.async_forward_entry_setup(config_entry, component)
+        if (
+            remote.device_type == DEVICE_GATEWAYSTB
+            or component == Platform.MEDIA_PLAYER
+        ):
+            await hass.config_entries.async_forward_entry_setups(
+                config_entry, [component]
             )
 
     return True
@@ -88,16 +88,11 @@ async def async_unload_entry(hass, config_entry):
     process_platforms = [
         component
         for component in PLATFORMS
-        if remote.device_type == DEVICE_GATEWAYSTB or component == ENTITY_MEDIA_PLAYER
+        if remote.device_type == DEVICE_GATEWAYSTB or component == Platform.MEDIA_PLAYER
     ]
 
-    unload_ok = all(
-        await asyncio.gather(
-            *[
-                hass.config_entries.async_forward_entry_unload(config_entry, component)
-                for component in process_platforms
-            ]
-        )
+    unload_ok = await hass.config_entries.async_unload_platforms(
+        config_entry, process_platforms
     )
 
     hass.data[DOMAIN][config_entry.entry_id][UNDO_UPDATE_LISTENER]()

@@ -1,5 +1,67 @@
 # Changelog
 
+## v2.11.12 (2025/01/30)
+### 🧰 Maintenance
+- [Change ssdp import inline with HA core 2025.2](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/adc68db866c09aa16a586d36bf7efb1371696823) - @RogerSelwyn
+
+### 📚 Documentation
+- [Update README.md](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/c145e67c95bf985b32393133761e84936d4b449c) - @RogerSelwyn
+- [Update README.md](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/ab8b8c79843d8308e315a4f6e5cfd85db4749579) - @RogerSelwyn
+
+### 🔖 Release
+- [Auto update manifest.json](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/0edadf57368692b9ec297e0d4636519ab09188a9) - @actions-user
+
+
+## v2.11.11 (2024/10/03)
+### 🐛 Fixes
+- [Fix deprecated constants](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/53c02c86ce2b4061406957fab32b5b366139e85c) - @RogerSelwyn
+
+### 🔖 Release
+- [Release v2.11.11](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/3007fe8f7088a2ff55821a803cc5dae0a5e9960b) - @RogerSelwyn
+
+## v2.11.10 (2024/09/04)
+### 🐛 Fixes
+- [Replace 'service' with 'action'](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/5866280d1bc8fc8c4d6a32390d7781fa98807ce1) - @RogerSelwyn
+
+### 🧰 Maintenance
+- [Add http as dependency](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/043419b34093c2912f1bede6363926aed81a908d) - @RogerSelwyn
+- [Set minumum HA version to 2024.8](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/562f0d6761dc78b0c116a3d0371629a2b8bcb1d6) - @RogerSelwyn
+
+### 🔖 Release
+- [Release v2.11.10](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/23317c6c9a010d593e9278a34912dd1ef9cc7b6b) - @RogerSelwyn
+
+## v2.11.9 (2024/07/05)
+### 🐛 Fixes
+- [Resolve deprecation warnings with 2024.7.x](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/1baec23ad6ab695de9b0722f9c8555f5c0c81914) - @RogerSelwyn
+
+### 🔨 Maintenance
+- [Set minimum HA version to 2024.7.0](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/17f900b358d431c4a6fff1319e097b2389386f7f) - @RogerSelwyn
+
+### 🔖 Release
+- [Bump to v2.11.9](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/a08dde7200ebdb04e570b890daece698213aaf7a) - @RogerSelwyn
+  
+## v2.11.8 (2024/06/05)
+### 🐛 Fixes
+- [Fix blocking call in the event loop](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/0cf1dffc072cdd6cf0214b71d2e0637a1be051e6) - @RogerSelwyn
+
+### 📚 Documentation
+- [Update README.md](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/18c2c9b45db873c6653565ce80ca9c7c5024e191) - @RogerSelwyn
+- [Update README.md](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/a297b9e6de7ca2cb725d96e6f3463c9ef07129bf) - @RogerSelwyn
+
+### 🔖 Release
+- [Release v2.11.8](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/ac9693b74a5f929dde30601c146007a005226436) - @RogerSelwyn
+
+## v2.11.7 (2023/12/27)
+### 🔨 Maintenance
+- [Minor code tidy up](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/d2a879c562dae4159ea068e8ceb2823ebdf79d9f) - @RogerSelwyn
+- [Replace deprecated constant](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/cf5d4bfb967b2e1e771387ff50df97516f43ced8) - @RogerSelwyn
+
+### ⬆️ Dependencies
+- [Bump pyskyqremote to 0.3.26](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/50b0a7acddf55e98ee4b2785595c0018d5f25aa9) - @RogerSelwyn
+
+### 🔖 Release
+- [Bump to v2.11.7](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/5750b6d8ce37aa742a3da612dad816c4bdd53888) - @RogerSelwyn
+
 ## v2.11.6 (2023/08/14)
 ### Enhancements
 - [Add ability to add `backup` to all channel source commands](https://github.com/RogerSelwyn/Home_Assistant_SkyQ_MediaPlayer/commit/518ba0eabb9fe92567cb3c910a836774ee4680ba) - @RogerSelwyn
